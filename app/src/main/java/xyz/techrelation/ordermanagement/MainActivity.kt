@@ -3,13 +3,14 @@ package xyz.techrelation.ordermanagement
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var notServed: TextView
     private lateinit var notPaid: TextView
     private lateinit var done: TextView
-    private lateinit var id: TextView
+    private lateinit var queueID: TextView
     private lateinit var time: TextView
     private lateinit var taiyaki_normal: TextView
     private lateinit var taiyaki_special: TextView
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         notPaid = this.findViewById(R.id.notPaid)
         done = this.findViewById(R.id.done)
 
-        id = this.findViewById(R.id.id)
+        queueID = this.findViewById(R.id.queueID)
         time = this.findViewById(R.id.time)
         taiyaki_normal = this.findViewById(R.id.taiyaki_normal)
         taiyaki_special = this.findViewById(R.id.taiyaki_special)
@@ -47,23 +48,47 @@ class MainActivity : AppCompatActivity() {
         zenzai = this.findViewById(R.id.zenzai)
         payment = this.findViewById(R.id.payment)
         remarks = this.findViewById(R.id.remarks)
-
         recyclerView = this.findViewById(R.id.recyclerView)
 
-        item_id = this.findViewById(R.id.item_id)
+
+        val testOrders = arrayListOf(
+            Order("999A\uD83C\uDF7D","12:00","0","2","0","0","500","test1"),
+            Order("999B\uD83D\uDECD", "12:10","0","0","1","0","500","test1"),
+            Order("1000\uD83C\uDF7D","12:10","0","2","0","0","260","test2"),
+            Order("1002\uD83C\uDF7D","12:13","1","0","1","0","240","test3"),
+            Order("1003\uD83D\uDECD","12:14","3","0","1","0","480","test4"),
+            Order("Alice\uD83C\uDF7D","12:20","0","1","0","1","680","test5"),
+            Order("1004\uD83D\uDECD","12:24","3","0","0","0","360","test6"),
+            Order("1005\uD83D\uDECD","12:26","1","0","0","0","120","test7"),
+            Order("1006\uD83D\uDECD","12:29","1","0","0","0","120","test8"),
+            Order("999C\uD83C\uDF7D","12:35","1","0","0","0","500","test1"),
+            Order("1007\uD83C\uDF7D","12:40","1","0","1","0","240","test9"),
+            Order("Bob\uD83C\uDF7D","12:42","1","0","1","0","240","test10"),
+
+        )
+
+        val adapter = ItemAdapter(testOrders)
+        recyclerView.adapter = adapter
+        val layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = layoutManager
+
+
+
+
+        /*item_id = this.findViewById(R.id.item_id)
         item_time = this.findViewById(R.id.item_time)
         item_taiyaki_normal = this.findViewById(R.id.item_taiyaki_normal)
         item_taiyaki_special = this.findViewById(R.id.item_taiyaki_special)
         item_dango = this.findViewById(R.id.item_dango)
         item_zenzai = this.findViewById(R.id.item_zenzai)
         item_payment = this.findViewById(R.id.item_payment)
-        item_remarks = this.findViewById(R.id.item_remarks)
+        item_remarks = this.findViewById(R.id.item_remarks)*/
 
 
         notServed.setOnClickListener{
             selectedTable = 0
 
-            id.setBackgroundResource(R.drawable.frame_style_notserved)
+            queueID.setBackgroundResource(R.drawable.frame_style_notserved)
             time.setBackgroundResource(R.drawable.frame_style_notserved)
             taiyaki_normal.setBackgroundResource(R.drawable.frame_style_notserved)
             taiyaki_special.setBackgroundResource(R.drawable.frame_style_notserved)
@@ -72,21 +97,21 @@ class MainActivity : AppCompatActivity() {
             payment.setBackgroundResource(R.drawable.frame_style_notserved)
             remarks.setBackgroundResource(R.drawable.frame_style_notserved)
 
-            item_id.setBackgroundResource(R.drawable.frame_style_notserved)
+           /* item_id.setBackgroundResource(R.drawable.frame_style_notserved)
             item_time.setBackgroundResource(R.drawable.frame_style_notserved)
             item_taiyaki_normal.setBackgroundResource(R.drawable.frame_style_notserved)
             item_taiyaki_special.setBackgroundResource(R.drawable.frame_style_notserved)
             item_dango.setBackgroundResource(R.drawable.frame_style_notserved)
             item_zenzai.setBackgroundResource(R.drawable.frame_style_notserved)
             item_payment.setBackgroundResource(R.drawable.frame_style_notserved)
-            item_remarks.setBackgroundResource(R.drawable.frame_style_notserved)
+            item_remarks.setBackgroundResource(R.drawable.frame_style_notserved)*/
 
         }
 
         notPaid.setOnClickListener{
             selectedTable = 1
 
-            id.setBackgroundResource(R.drawable.frame_style_notpaid)
+            queueID.setBackgroundResource(R.drawable.frame_style_notpaid)
             time.setBackgroundResource(R.drawable.frame_style_notpaid)
             taiyaki_normal.setBackgroundResource(R.drawable.frame_style_notpaid)
             taiyaki_special.setBackgroundResource(R.drawable.frame_style_notpaid)
@@ -95,20 +120,20 @@ class MainActivity : AppCompatActivity() {
             payment.setBackgroundResource(R.drawable.frame_style_notpaid)
             remarks.setBackgroundResource(R.drawable.frame_style_notpaid)
 
-            item_id.setBackgroundResource(R.drawable.frame_style_notpaid)
+            /*item_id.setBackgroundResource(R.drawable.frame_style_notpaid)
             item_time.setBackgroundResource(R.drawable.frame_style_notpaid)
             item_taiyaki_normal.setBackgroundResource(R.drawable.frame_style_notpaid)
             item_taiyaki_special.setBackgroundResource(R.drawable.frame_style_notpaid)
             item_dango.setBackgroundResource(R.drawable.frame_style_notpaid)
             item_zenzai.setBackgroundResource(R.drawable.frame_style_notpaid)
             item_payment.setBackgroundResource(R.drawable.frame_style_notpaid)
-            item_remarks.setBackgroundResource(R.drawable.frame_style_notpaid)
+            item_remarks.setBackgroundResource(R.drawable.frame_style_notpaid)*/
         }
 
         done.setOnClickListener{
             selectedTable = 2
 
-            id.setBackgroundResource(R.drawable.frame_style_done)
+            queueID.setBackgroundResource(R.drawable.frame_style_done)
             time.setBackgroundResource(R.drawable.frame_style_done)
             taiyaki_normal.setBackgroundResource(R.drawable.frame_style_done)
             taiyaki_special.setBackgroundResource(R.drawable.frame_style_done)
@@ -117,14 +142,14 @@ class MainActivity : AppCompatActivity() {
             payment.setBackgroundResource(R.drawable.frame_style_done)
             remarks.setBackgroundResource(R.drawable.frame_style_done)
 
-            item_id.setBackgroundResource(R.drawable.frame_style_done)
+            /*item_id.setBackgroundResource(R.drawable.frame_style_done)
             item_time.setBackgroundResource(R.drawable.frame_style_done)
             item_taiyaki_normal.setBackgroundResource(R.drawable.frame_style_done)
             item_taiyaki_special.setBackgroundResource(R.drawable.frame_style_done)
             item_dango.setBackgroundResource(R.drawable.frame_style_done)
             item_zenzai.setBackgroundResource(R.drawable.frame_style_done)
             item_payment.setBackgroundResource(R.drawable.frame_style_done)
-            item_remarks.setBackgroundResource(R.drawable.frame_style_done)
+            item_remarks.setBackgroundResource(R.drawable.frame_style_done)*/
         }
 
 

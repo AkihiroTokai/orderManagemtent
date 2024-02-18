@@ -58,7 +58,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/id"
+                android:id="@+id/queueID"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -82,7 +82,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="薄皮(0)"
+                android:text="薄皮"
                 android:textSize="16sp"
                 android:gravity="center_horizontal"
                 android:background="@drawable/frame_style_notserved"/>
@@ -92,7 +92,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="番茶(0)"
+                android:text="番茶"
                 android:textSize="16sp"
                 android:gravity="center_horizontal"
                 android:background="@drawable/frame_style_notserved"/>
@@ -102,7 +102,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="だんご(0)"
+                android:text="だんご"
                 android:textSize="16sp"
                 android:gravity="center_horizontal"
                 android:background="@drawable/frame_style_notserved"/>
@@ -112,7 +112,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="ぜんざい(0)"
+                android:text="ぜんざい"
                 android:textSize="16sp"
                 android:gravity="center_horizontal"
                 android:background="@drawable/frame_style_notserved"/>
