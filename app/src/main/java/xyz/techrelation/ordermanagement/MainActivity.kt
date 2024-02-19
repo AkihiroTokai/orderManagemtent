@@ -64,11 +64,25 @@ class MainActivity : AppCompatActivity() {
             Order("999C\uD83C\uDF7D","12:35","1","0","0","0","500","test1"),
             Order("1007\uD83C\uDF7D","12:40","1","0","1","0","240","test9"),
             Order("Bob\uD83C\uDF7D","12:42","1","0","1","0","240","test10"),
+            Order("1008\uD83C\uDF7D","12:44","0","0","1","0","120","test11"),
+            Order("1009\uD83C\uDF7D","12:48","0","3","0","0","390","test12"),
+            Order("1010\uD83C\uDF7D","12:49","1","0","0","2","1120","test13"),
+            Order("1011\uD83D\uDECD","12:50","1","1","1","0","360","test14"),
+            Order("Charlie\uD83C\uDF7D","12:52","0","1","0","1","680","test15"),
+            Order("1012A\uD83C\uDF7D","12:55","0","1","0","0","720","test16"),
+            Order("1012B\uD83D\uDECD", "12:58","0","5","0","0","720","test16"),
+            Order("1013\uD83D\uDECD","12:59","1","0","0","0","120","test17"),
+            Order("1014\uD83C\uDF7D","13:00","1","0","0","0","500","test18"),
+            Order("1015\uD83C\uDF7D","13:05","1","0","1","0","240","test19"),
+            Order("Dave\uD83C\uDF7D","13:10","1","0","1","0","240","test20"),
 
         )
 
         val adapter = ItemAdapter(testOrders)
         recyclerView.adapter = adapter
+
+
+
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
 
