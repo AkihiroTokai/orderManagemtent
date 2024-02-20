@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        /*item_id = this.findViewById(R.id.item_id)
+       /* item_id = this.findViewById(R.id.item_id)
         item_time = this.findViewById(R.id.item_time)
         item_taiyaki_normal = this.findViewById(R.id.item_taiyaki_normal)
         item_taiyaki_special = this.findViewById(R.id.item_taiyaki_special)
@@ -134,6 +134,7 @@ class MainActivity : AppCompatActivity() {
             payment.setBackgroundResource(R.drawable.frame_style_notpaid)
             remarks.setBackgroundResource(R.drawable.frame_style_notpaid)
 
+            //ItemAdapter().changeBackGround(selectedTable)
             /*item_id.setBackgroundResource(R.drawable.frame_style_notpaid)
             item_time.setBackgroundResource(R.drawable.frame_style_notpaid)
             item_taiyaki_normal.setBackgroundResource(R.drawable.frame_style_notpaid)
@@ -169,4 +170,5 @@ class MainActivity : AppCompatActivity() {
 
 
   }
+
 }

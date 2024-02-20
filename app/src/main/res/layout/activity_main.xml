@@ -21,32 +21,32 @@
             <TextView
                 android:id="@+id/notServed"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_weight="1"
                 android:text="🍽️未提供🛍️"
-                android:textSize="16sp"
-                android:gravity="center_horizontal"
+                android:textSize="24sp"
+                android:gravity="center"
                 android:background="@drawable/frame_style_notserved"/>
 
             <TextView
                 android:id="@+id/notPaid"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_weight="1"
                 android:text="💰未会計💴"
-                android:textSize="16sp"
-                android:gravity="center_horizontal"
+                android:textSize="24sp"
+                android:gravity="center"
                 android:background="@drawable/frame_style_notpaid"/>
 
 
             <TextView
                 android:id="@+id/done"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_weight="1"
                 android:text="✅完了✨"
-                android:textSize="16sp"
-                android:gravity="center_horizontal"
+                android:textSize="24sp"
+                android:gravity="center"
                 android:background="@drawable/frame_style_done"/>
 
         </LinearLayout>
@@ -63,8 +63,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="🔢"
-                android:textSize="16sp"
-                android:gravity="center_horizontal"
+                android:textSize="24sp"
+                android:gravity="center"
                 android:background="@drawable/frame_style_notserved"/>
 
             <TextView
@@ -73,8 +73,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="⏳"
-                android:textSize="16sp"
-                android:gravity="center_horizontal"
+                android:textSize="24sp"
+                android:gravity="center"
                 android:background="@drawable/frame_style_notserved"/>
 
             <TextView
@@ -83,8 +83,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="薄皮"
-                android:textSize="16sp"
-                android:gravity="center_horizontal"
+                android:textSize="24sp"
+                android:gravity="center"
                 android:background="@drawable/frame_style_notserved"/>
 
             <TextView
@@ -93,8 +93,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="番茶"
-                android:textSize="16sp"
-                android:gravity="center_horizontal"
+                android:textSize="24sp"
+                android:gravity="center"
                 android:background="@drawable/frame_style_notserved"/>
 
             <TextView
@@ -103,8 +103,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="だんご"
-                android:textSize="16sp"
-                android:gravity="center_horizontal"
+                android:textSize="24sp"
+                android:gravity="center"
                 android:background="@drawable/frame_style_notserved"/>
 
             <TextView
@@ -112,9 +112,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="ぜんざい"
-                android:textSize="16sp"
-                android:gravity="center_horizontal"
+                android:text="☕"
+                android:textSize="24sp"
+                android:gravity="center"
                 android:background="@drawable/frame_style_notserved"/>
 
             <TextView
@@ -123,8 +123,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="💴"
-                android:textSize="16sp"
-                android:gravity="center_horizontal"
+                android:textSize="24sp"
+                android:gravity="center"
                 android:background="@drawable/frame_style_notserved"/>
             <TextView
                 android:id="@+id/remarks"
@@ -132,16 +132,16 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="📝"
-                android:textSize="16sp"
-                android:gravity="center_horizontal"
+                android:textSize="24sp"
+                android:gravity="center"
                 android:background="@drawable/frame_style_notserved"/>
 
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/recyclerView"
             tools:itemCount="25" />
 
     </LinearLayout>
