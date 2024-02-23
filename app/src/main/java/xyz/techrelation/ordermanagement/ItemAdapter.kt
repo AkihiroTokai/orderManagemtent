@@ -65,8 +65,14 @@ class ItemAdapter(val list: List<Order>, val selectedTable: Int) : RecyclerView.
             }
 
             item_taiyaki_normal.setOnClickListener {
-                item_taiyaki_normal.setTextColor(Color.parseColor("#FF03DAC5"))
-                Toast.makeText(item_taiyaki_normal.getContext(), list[position].toString()+"Taiyaki_normal", Toast.LENGTH_SHORT).show();
+                if (nc_taiyaki_normal){
+                    item_taiyaki_normal.setTextColor(Color.parseColor("#FF03DAC5"))
+                    
+                    Toast.makeText(item_taiyaki_normal.getContext(), list[position].toString()+"Taiyaki_normal", Toast.LENGTH_SHORT).show();
+                }else{
+
+                }
+
             }
 
             item_taiyaki_special.setOnClickListener {
