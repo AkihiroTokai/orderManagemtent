@@ -14,4 +14,9 @@ class ItemHolder(item: View) : RecyclerView.ViewHolder(item)  {
     val item_payment: TextView = item.findViewById(R.id.item_payment)
     val item_remarks: TextView = item.findViewById(R.id.item_remarks)
 
+    var nc_taiyaki_normal: Boolean = false
+    var nc_taiyaki_special: Boolean = false
+    var nc_dango: Boolean = false
+    var nc_zenzai: Boolean = false
+    var nc_payment: Boolean = false
 }

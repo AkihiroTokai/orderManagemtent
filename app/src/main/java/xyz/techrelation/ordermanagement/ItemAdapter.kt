@@ -24,12 +24,39 @@ class ItemAdapter(val list: List<Order>, val selectedTable: Int) : RecyclerView.
             val order = list[position]
             item_queueID.text = order.item_queueID
             item_time.text = order.item_time
-            item_taiyaki_normal.text = order.item_taiyaki_normal
-            item_taiyaki_special.text = order.item_taiyaki_special
-            item_dango.text = order.item_dango
-            item_zenzai.text = order.item_zenzai
-            item_payment.text = order.item_payment
+
+            item_taiyaki_normal.text = order.item_taiyaki_normal.toString()
+            nc_taiyaki_normal = order.nc_taiyaki_normal
+            if(!nc_taiyaki_normal && order.item_taiyaki_normal != "0"){
+                item_taiyaki_normal.setTextColor(Color.parseColor("#CAC4D0") )
+            }
+
+            item_taiyaki_special.text = order.item_taiyaki_special.toString()
+            nc_taiyaki_special = order.nc_taiyaki_special
+            if(!nc_taiyaki_special && order.item_taiyaki_special != "0"){
+                item_taiyaki_special.setTextColor(Color.parseColor("#CAC4D0") )
+            }
+
+            item_dango.text = order.item_dango.toString()
+            nc_dango = order.nc_dango
+            if(!nc_dango && order.item_dango != "0"){
+                item_dango.setTextColor(Color.parseColor("#CAC4D0") )
+            }
+
+            item_zenzai.text = order.item_zenzai.toString()
+            nc_zenzai = order.nc_zenzai
+            if(!nc_zenzai && order.item_zenzai != "0"){
+                item_zenzai.setTextColor(Color.parseColor("#CAC4D0") )
+            }
+
+            item_payment.text = order.item_payment.toString()
+            nc_payment = order.nc_payment
+            if(!nc_payment){
+                item_payment.setTextColor(Color.parseColor("#CAC4D0") )
+            }
+
             item_remarks.text = order.item_remarks
+
 
             when (selectedTable){
                 0 -> {
@@ -66,33 +93,54 @@ class ItemAdapter(val list: List<Order>, val selectedTable: Int) : RecyclerView.
 
             item_taiyaki_normal.setOnClickListener {
                 if (nc_taiyaki_normal){
-                    item_taiyaki_normal.setTextColor(Color.parseColor("#FF03DAC5"))
-                    
-                    Toast.makeText(item_taiyaki_normal.getContext(), list[position].toString()+"Taiyaki_normal", Toast.LENGTH_SHORT).show();
-                }else{
-
+                    item_taiyaki_normal.setTextColor(Color.parseColor("#03DAC5"))
+                    nc_taiyaki_normal = false
+                    Toast.makeText(item_taiyaki_normal.getContext(), list[position].toString()+"Taiyaki_normal", Toast.LENGTH_SHORT).show()
+                }else if (!nc_taiyaki_normal && order.item_taiyaki_normal != "0" ){
+                    item_taiyaki_normal.setTextColor(Color.parseColor("#CAC4D0") )
+                    nc_taiyaki_normal = true
                 }
-
             }
 
             item_taiyaki_special.setOnClickListener {
-                item_taiyaki_special.setTextColor(Color.parseColor("#FF03DAC5"))
-                //Toast.makeText(item_taiyaki_special.getContext(), list[position].toString()+"Taiyaki_special", Toast.LENGTH_SHORT).show();
+                if (nc_taiyaki_special){
+                    item_taiyaki_special.setTextColor(Color.parseColor("#03DAC5"))
+                    nc_taiyaki_special = false
+                    Toast.makeText(item_taiyaki_special.getContext(), list[position].toString()+"Taiyaki_special", Toast.LENGTH_SHORT).show()
+                }else if (!nc_taiyaki_special && order.item_taiyaki_special != "0" ){
+                    item_taiyaki_special.setTextColor(Color.parseColor("#CAC4D0") )
+                    nc_taiyaki_special = true
+                }
             }
 
             item_dango.setOnClickListener{
-                item_dango.setTextColor(Color.parseColor("#FF03DAC5"))
-                //Toast.makeText(item_dango.getContext(), list[position].toString()+"dango", Toast.LENGTH_SHORT).show();
+                if(order.nc_dango) {
+                    item_dango.setTextColor(Color.parseColor("#03DAC5"))
+                    order.nc_dango = false
+                }else if (!nc_dango && order.item_dango != "0" ){
+                    item_dango.setTextColor(Color.parseColor("#CAC4D0"))
+                    order.nc_dango = true
+                }
             }
 
             item_zenzai.setOnClickListener{
-                item_zenzai.setTextColor(Color.parseColor("#FF03DAC5"))
-                //Toast.makeText(item_zenzai.getContext(), list[position].toString()+"zenzai", Toast.LENGTH_SHORT).show();
+                if(nc_zenzai) {
+                    item_zenzai.setTextColor(Color.parseColor("#03DAC5"))
+                    nc_zenzai = false
+                }else if (!nc_zenzai && order.item_zenzai != "0" ){
+                    item_zenzai.setTextColor(Color.parseColor("#CAC4D0"))
+                    nc_zenzai = true
+                }
             }
 
             item_payment.setOnClickListener {
-                item_payment.setTextColor(Color.parseColor("#FF03DAC5"))
-                //Toast.makeText(item_taiyaki_special.getContext(), list[position].toString()+"Taiyaki_special", Toast.LENGTH_SHORT).show();
+                if(nc_payment){
+                    item_payment.setTextColor(Color.parseColor("#03DAC5"))
+                    nc_payment = false
+                }else{
+                    item_payment.setTextColor(Color.parseColor("#FFDE03"))
+                    nc_payment = true
+                }
             }
         }
     }
